@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adewoye Ayomide Matthew - Data Analyst Portfolio</title>
+    <meta name="description" content="Data Analyst specializing in business intelligence, statistical analysis, and data visualization">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">AAM</span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-section="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-section="about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#resume" class="nav-link" data-section="resume">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i data-lucide="sun" class="theme-icon"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="section hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="hero-greeting">
+                            <span class="greeting-text">Hello, I'm</span>
+                        </div>
+                        <h1 class="hero-title">
+                            <span class="title-line">Adewoye Ayomide</span>
+                            <span class="title-line">Matthew</span>
+                        </h1>
+                        <h2 class="hero-subtitle">Data Analyst</h2>
+                        <p class="hero-description">
+                            Transforming raw data into actionable insights through statistical analysis, 
+                            data visualization, and business intelligence solutions.
+                        </p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary" onclick="downloadResume()">
+                                <i data-lucide="download"></i>
+                                Download Resume
+                            </button>
+                            <button class="btn btn-secondary" onclick="scrollToSection('projects')">
+                                <i data-lucide="eye"></i>
+                                View Projects
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="image-container">
+                            <div class="profile-image">
+                              <img src="./img/triple.jpg" load="lazy" alt="Adewoye Ayomide Matthew image" class="image-placeholder">
+               </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Passionate about uncovering insights from complex datasets</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="about-card">
+                            <p class="about-description">
+                                I'm a dedicated Data Analyst with expertise in statistical analysis, 
+                                data visualization, and business intelligence. With a strong foundation 
+                                in mathematics and programming, I specialize in transforming complex 
+                                datasets into clear, actionable insights that drive business decisions.
+                            </p>
+                            <p class="about-description">
+                                My experience spans across various industries, where I've helped 
+                                organizations optimize their operations, identify growth opportunities, 
+                                and make data-driven strategic decisions through comprehensive analysis 
+                                and compelling visualizations.
+                            </p>
+                        </div>
+                        
+                        <div class="expertise-grid">
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i data-lucide="bar-chart-3"></i>
+                                </div>
+                                <h3 class="expertise-title">Statistical Analysis</h3>
+                                <p class="expertise-description">Advanced statistical modeling and hypothesis testing</p>
+                            </div>
+                            
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i data-lucide="pie-chart"></i>
+                                </div>
+                                <h3 class="expertise-title">Data Visualization</h3>
+                                <p class="expertise-description">Creating compelling dashboards and interactive reports</p>
+                            </div>
+                            
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i data-lucide="database"></i>
+                                </div>
+                                <h3 class="expertise-title">Database Management</h3>
+                                <p class="expertise-description">Efficient data extraction and manipulation</p>
+                            </div>
+                            
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i data-lucide="trending-up"></i>
+                                </div>
+                                <h3 class="expertise-title">Business Intelligence</h3>
+                                <p class="expertise-description">Strategic insights for data-driven decisions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Showcasing impactful data analysis and visualization work</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image">
+                      <img src="./img/project-one.jpg" load="lazy" alt="Sample sales dataset project image" class="image-placeholder">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Sample sales dataset project</h3>
+                            <div class="project-tools">
+                                <span class="tool-tag">MS Excel</span>
+            </div>
+                            <p class="project-description">I  and my partner analyzed monthly sales data to identify trends and seasonality, using Microsoft Excel. You created scatter plots with trendlines and pivot tables to summarize data, aiming to inform business decisions like inventory management. Excel's ease of use suited this learning exercise, but it may struggle with large datasets or advanced analytics compared to tools like Python. the project revealed sales patterns, offering practical experience.
+                                 </p>
+                            <div class="project-links">
+                                <a href="https://x.com/triplea1610/status/1918780417714372924?s=46" class="project-link">
+                                    <i data-lucide="twitter"></i>
+                                    X
+                                </a>
+                                <a href="https://www.linkedin.com/posts/ayomide-adewoye-03b736323_30daysofdatawithannie-30daystdidatachallengwithannie-activity-7324549106666790912-GOb4?utm_source=share&utm_medium=member_ios&rcm=ACoAAFHM368BdeVuK81PwosobH7kht-l1PafPdc" class="project-link">
+                                    <i data-lucide="linkedin"></i>
+                                    LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./img/project-two.jpg" load="lazy" alt="Fashion retail dataset image" class="image-placeholder">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Fashion retail dataset</h3>
+                            <div class="project-tools">
+                                <span class="tool-tag">MS Excel</span>
+               </div>
+                            <p class="project-description">
+                    Project: Exploratory Data Analysis of Fashion Inventory Data
+<br>
+<br>
+
+Objective: Analyze fashion inventory data to identify trends and patterns, supporting inventory optimization and demand forecasting.
+<br>
+<br>
+
+Dataset: Likely includes product name, price, availability, color, brand, ratings.
+<br>
+<br>
+Methods: 
+<br>
+- Descriptive statistics
+<br>
+- Visualizations (histograms, box plots)
+<br>
+- Missing value and outlier analysis
+- Segmentation by product type or season
+<br>
+<br>
+Findings: Expected to reveal sales trends, seasonal patterns, price-sales correlations.        </p>
+                            <div class="project-links">
+                                <a href="https://x.com/triplea1610/status/1922969772938948704?s=46" class="project-link">
+                                    <i data-lucide="twitter"></i>
+                                    X
+                                </a>
+                                <a href="https://www.linkedin.com/posts/ayomide-adewoye-03b736323_30daysofdatawithannie-30daysofdatawithannie-activity-7329612762261635072-EJRJ?utm_source=share&utm_medium=member_ios&rcm=ACoAAFHM368BdeVuK81PwosobH7kht-l1PafPdc" class="project-link">
+                                    <i data-lucide="linkedin"></i>
+                                    LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./img/project-three.jpg" alt="Introvert vs extrovert behavior dataset image" load="lazy" class="image-placeholder">
+                     
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Introvert vs extrovert behavior dataset</h3>
+                            <div class="project-tools">
+                                <span class="tool-tag">MySQL</span>
+               </div>
+                            <p class="project-description">Data Cleaning of a Kaggle Dataset Using MySQL," involves cleaning a "dirty" Kaggle dataset to ensure accuracy for analysis. Using MySQL, you create a new table to mirror the original, addressing issues like missing values and duplicates. Steps include data assessment, cleaning operations, and validation, with documentation shared on X. The goal is a reliable dataset and improved SQL skills. Data cleaning is vital but debated for its time cost and risk of bias.
+                                           </p>
+                            <div class="project-links">
+                                <a href="https://x.com/triplea1610/status/1934607670897516908?s=46" class="project-link">
+                                    <i data-lucide="twitter"></i>
+                                    X
+                                </a>
+                 </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills & Technologies</h2>
+                    <p class="section-subtitle">Tools and technologies I work with</p>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i data-lucide="code"></i>
+                            Programming Languages
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">R</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">SQL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div>
+                            </div>
+                                <div class="skill-item">
+                                <span class="skill-name">SPSS</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div>
+                            </div>
+                      
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i data-lucide="database"></i>
+                            Databases
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">PostgreSQL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">MySQL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">MongoDB</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">SQLite</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i data-lucide="bar-chart"></i>
+                            Visualization
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">MS Excel Dashboard</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div>
+        </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="section resume-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Resume</h2>
+                    <p class="section-subtitle">Download my complete professional profile</p>
+                </div>
+                
+                <div class="resume-content">
+                    <div class="resume-card">
+                        <div class="resume-icon">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <div class="resume-info">
+                            <h3 class="resume-title">Professional Resume</h3>
+                            <p class="resume-description">
+                                Complete overview of my experience, education, and achievements 
+                                in data analysis and business intelligence.
+                            </p>
+                            <div class="resume-meta">
+                                <span class="resume-format">PDF Format</span>
+                                <span class="resume-size">&lt;100KB</span>
+                                <span class="resume-updated">Updated June 2025</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary resume-download" onclick="downloadResume()">
+                            <i data-lucide="download"></i>
+                            Download Resume
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's discuss how data can drive your business forward</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <h3 class="contact-title">Let's Connect</h3>
+                            <p class="contact-description">
+                                I'm always interested in discussing new opportunities, 
+                                data challenges, and potential collaborations.
+                            </p>
+                            
+                            <div class="contact-methods">
+                                <a href="mailto:adewoyeayomide1@gmail.com" class="contact-method">
+                                    <div class="method-icon">
+                                        <i data-lucide="mail"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <h4 class="method-title">Email</h4>
+                                        <p class="method-detail">adewoyeayomide1@gmail.com</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="https://www.linkedin.com/in/ayomide-adewoye-03b736323" target="_blank" class="contact-method">
+                                    <div class="method-icon">
+                                        <i data-lucide="linkedin"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <h4 class="method-title">LinkedIn</h4>
+                                        <p class="method-detail">Connect professionally</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="https://wa.me/+2349167053561" target="_blank" class="contact-method">
+                                    <div class="method-icon">
+                                        <i data-lucide="message-circle"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <h4 class="method-title">WhatsApp</h4>
+                                        <p class="method-detail">Message me privately</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="https://x.com/triplea1610" target="_blank" class="contact-method">
+                                    <div class="method-icon">
+                                        <i data-lucide="twitter"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <h4 class="method-title">X</h4>
+                                        <p class="method-detail">Follow and catch up with my latest posts</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-input" placeholder="Enter the mail subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Enter the message" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary form-submit">
+                                <i data-lucide="send"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Adewoye Ayomide Matthew. All rights reserved.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/ayomide-adewoye-03b736323" target="_blank" class="social-link">
+                        <i data-lucide="linkedin"></i>
+                    </a>
+                    <a href="https://x.com/triplea1610" target="_blank" class="social-link">
+                        <i data-lucide="twitter"></i>
+                    </a>
+                    <a href="https://wa.me/+2349167053561" target="_blank" class="social-link">
+                        <i data-lucide="message-circle"></i>
+                    </a>
+                    <a href="mailto:adewoyeayomide1@gmail.com" class="social-link">
+                        <i data-lucide="mail"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
