@@ -341,28 +341,34 @@ function handleContactFormSubmission(form) {
     }
     
     // Create mailto link (since we can't use backend)
-    const mailtoLink = `mailto:adewoyeayomide1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    // const mailtoLink = `mailto:adewoyeayomide1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
     
     // Simulate form processing
     setTimeout(() => {
         // Reset button
-        submitButton.innerHTML = originalText;
-        submitButton.disabled = false;
+        try {
+      const response = await fetch("https://formsubmit.co/adewoyeayomide1@gmail.com", {
+        method: "POST",
+        body: formData,
+      });
+      submitButton.innerHTML = originalText;
+      submitButton.disabled = false;
         
         // Re-initialize icons
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
-        
-        // Open mailto link
-        window.location.href = mailtoLink;
-        
-        // Show success message
-        showNotification('Thank you for your message! Your email client should open now.', 'success');
-        
-        // Reset form
+
+      if (response.ok) {
+        showNotification('Thank you for your message! Your message has been sent successfully', 'success');
         form.reset();
-    }, 1000);
+      } else {
+        showNotification("Failed to send. Please try again.", "error");
+      }
+    } catch (err) {
+      showNotification("An error occurred. Please try later.", "error");
+    }
+  }, 1000);
 }
 
 // ===== RESUME DOWNLOAD FUNCTIONALITY =====
