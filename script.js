@@ -311,65 +311,74 @@ function initializeContactForm() {
     }
 }
 
-function handleContactFormSubmission(form) {
+async function handleContactFormSubmission(form) {
     const formData = new FormData(form);
     const name = formData.get('name');
     const email = formData.get('email');
     const subject = formData.get('subject');
     const message = formData.get('message');
-    
+
     // Validate form
     if (!name || !email || !subject || !message) {
         showNotification('Please fill in all fields.', 'error');
         return;
     }
-    
+
     if (!isValidEmail(email)) {
         showNotification('Please enter a valid email address.', 'error');
         return;
     }
-    
+
     // Show loading state
     const submitButton = form.querySelector('.form-submit');
     const originalText = submitButton.innerHTML;
     submitButton.innerHTML = '<i data-lucide="loader-2"></i> Sending...';
     submitButton.disabled = true;
-    
+
     // Re-initialize icons
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
-    
-    // Create mailto link (since we can't use backend)
-    // const mailtoLink = `mailto:adewoyeayomide1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-    
-    // Simulate form processing
-    setTimeout(() => {
-        // Reset button
-        try {
-      const response = await fetch("https://formsubmit.co/adewoyeayomide1@gmail.com", {
-        method: "POST",
-        body: formData,
-      });
-      submitButton.innerHTML = originalText;
-      submitButton.disabled = false;
-        
+
+    try {
+        // Configure FormSubmit.co properly
+        const response = await fetch("https://formsubmit.co/adewoyeayomide1@gmail.com", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                subject: subject,
+                message: message,
+                _subject: `Portfolio Contact: ${subject}`,
+                _captcha: "false"
+            })
+        });
+
+        if (response.ok) {
+            showNotification('Thank you for your message! Your message has been sent successfully.', 'success');
+            form.reset();
+        } else {
+            throw new Error('Failed to send message');
+        }
+    } catch (error) {
+        console.error('Contact form error:', error);
+        showNotification('Failed to send message. Please try again later.', 'error');
+    } finally {
+        // Reset button state
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+
         // Re-initialize icons
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
-
-      if (response.ok) {
-        showNotification('Thank you for your message! Your message has been sent successfully', 'success');
-        form.reset();
-      } else {
-        showNotification("Failed to send. Please try again.", "error");
-      }
-    } catch (err) {
-      showNotification("An error occurred. Please try later.", "error");
     }
-  }, 1000);
 }
+
 
 // ===== RESUME DOWNLOAD FUNCTIONALITY =====
 function downloadResume() {
